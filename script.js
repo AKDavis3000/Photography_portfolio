@@ -23,10 +23,11 @@ document.addEventListener('click', (e) => {
 
 // lightbox code webdevsimplified not working
 const lightbox = document.createElement('div');
-lightbox.id = 'lightbox';
+lightbox.setAttribute('id', 'lightbox');
 document.body.appendChild(lightbox);
 
-const lightboxImages = document.querySelectorAll('.lightbox');
+const lightboxImages = document.querySelectorAll('.lightbox-img');
+
 lightboxImages.forEach((image) => {
   image.addEventListener('click', (e) => {
     lightbox.classList.add('active');
