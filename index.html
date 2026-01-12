@@ -15,12 +15,18 @@
       integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
+    <!-- css -->
     <link
       rel="stylesheet"
       href="./dist/css/main.css" />
+    <!-- js -->
+    <script
+      defer
+      src="script.js"></script>
     <title>Photography Portfolio</title>
   </head>
   <body>
+    <!-- header -->
     <header>
       <p class="logo">Photography Inc</p>
       <i class="fa-solid fa-bars"></i>
@@ -32,5 +38,122 @@
         </ul>
       </nav>
     </header>
+
+    <!-- introduction -->
+    <div class="intro-container">
+      <div>
+        <p class="name">First Last</p>
+        <p class="title">Photographer</p>
+      </div>
+      <div class="self-image">
+        <img
+          src="./img/photographer-square.jpg"
+          alt="a man in a grey sweater with a camera around his neck" />
+      </div>
+    </div>
+
+    <!-- about me -->
+    <div class="about-container">
+      <div class="about_title">
+        <p>About Me</p>
+        <div class="about_line"></div>
+        <p>Photography Inc</p>
+      </div>
+      <div class="about_description">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum
+        </p>
+      </div>
+    </div>
+
+    <!-- photo gallery -->
+    <div class="gallery-container">
+      <div class="photo-gallery">
+        <div class="column">
+          <div class="photo">
+            <img
+              class="lightbox"
+              src="./img/floral-archway.jpg"
+              alt="floral wedding archway" />
+          </div>
+          <div class="photo">
+            <img
+              class="lightbox"
+              src="./img/family-four.jpg"
+              alt="a family of four" />
+          </div>
+          <div class="photo">
+            <img
+              class="lightbox"
+              src="./img/model-black-hat.jpg"
+              alt="a model with a black hat" />
+          </div>
+        </div>
+        <div class="column">
+          <div class="photo">
+            <img
+              class="lightbox"
+              src="./img/family-three.jpg"
+              alt="two parents and their child" />
+          </div>
+          <div class="photo">
+            <img
+              class="lightbox"
+              src="./img/married-couple.jpg"
+              alt="a bride and groom" />
+          </div>
+          <div class="photo">
+            <img
+              class="lightbox"
+              src="./img/model-yellow.jpg"
+              alt="a model with a yellow background" />
+          </div>
+        </div>
+        <div class="column">
+          <div class="photo">
+            <img
+              class="lightbox"
+              src="./img/model-orange.jpg"
+              alt="a model in an orange sweater" />
+          </div>
+          <div class="photo">
+            <img
+              class="lightbox"
+              src="./img/model-grey-sweater.jpg"
+              alt="A model in a grey sweater" />
+          </div>
+          <div class="photo">
+            <img
+              class="lightbox"
+              src="./img/mountains.jpg"
+              alt="a landscape of trees, water, mountains, and flowers" />
+          </div>
+        </div>
+        <div class="column">
+          <div class="photo">
+            <img
+              class="lightbox"
+              src="./img/waterfall.jpg"
+              alt="a waterfall" />
+          </div>
+          <div class="photo">
+            <img
+              class="lightbox"
+              src="./img/rocky.jpg"
+              alt="a rocky landscape" />
+          </div>
+          <div class="photo">
+            <img
+              class="lightbox"
+              src="./img/model-cross.jpg"
+              alt="a model sitting down" />
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

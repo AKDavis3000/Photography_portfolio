@@ -13,7 +13,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
-  font-family: "Sansation", sans-serif;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
 }
 
 header {
@@ -31,6 +31,11 @@ header p {
 header .fa-bars {
   margin-right: 20px;
   font-size: 1.4rem;
+  cursor: pointer;
+}
+header .fa-x {
+  margin: 15px;
+  cursor: pointer;
 }
 header nav {
   border-radius: 20px;
@@ -39,10 +44,12 @@ header nav {
   background-color: rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(209, 207, 207, 0.1);
   position: fixed;
-  right: 0;
+  right: -355px;
   top: 10px;
-  width: 20%;
+  width: 270px;
   height: 100vh;
+  transition: 0.5s;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
 }
 header nav ul {
   list-style-type: none;
@@ -53,4 +60,98 @@ header nav ul li {
 }
 header nav ul li a {
   text-decoration: none;
+}
+
+.intro-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: "Zalando Sans Expanded", sans-serif;
+  align-items: center;
+}
+.intro-container div {
+  text-align: center;
+}
+.intro-container div .name {
+  font-size: clamp(2rem, 6vw, 5rem);
+  text-transform: uppercase;
+}
+.intro-container div .title {
+  font-size: clamp(0.6rem, 2vw, 1.2rem);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.intro-container .self-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.about-container {
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 50px;
+  box-shadow: 0px 0px 20px 20px #000;
+  margin: 30px 0 100px 0;
+}
+.about-container .about_title p:nth-child(1) {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.about-container .about_title .about_line {
+  height: 60px;
+  width: 1px;
+  background-color: #0f542f;
+  margin: 0 0 5px 10px;
+}
+.about-container .about_title p:nth-child(3) {
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+.about-container .about_description p {
+  font-family: "Nunito Sans", sans-serif;
+  text-align: justify;
+  width: 700px;
+  margin-left: 70px;
+  letter-spacing: 1.5px;
+  line-height: 25px;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+  padding: 40px 0;
+}
+.gallery-container .photo-gallery {
+  display: flex;
+  gap: 20px;
+}
+.gallery-container .photo-gallery .column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.gallery-container .photo-gallery .column .photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  header nav {
+    width: 250px;
+  }
+  .intro-container {
+    grid-template-columns: 1fr;
+  }
+  .intro-container div {
+    margin: 50px 0 20px 0;
+  }
+}
+@media (max-width: 768px) {
+  .gallery-container .photo-gallery {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=main.css.map */
