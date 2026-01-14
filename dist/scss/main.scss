@@ -20,11 +20,15 @@ body {
 }
 
 //-------nav--------//
+
 header {
   position: relative;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  background-color: black;
 
   p {
     font-family: $zalando;
@@ -44,7 +48,6 @@ header {
     cursor: pointer;
   }
 
-  // is this too dark? or not contrasting enough?
   nav {
     border-radius: 20px;
     backdrop-filter: blur(5px);
@@ -94,6 +97,7 @@ header {
   }
 
   .self-image {
+    margin-top: 40px;
     img {
       height: 100%;
       width: 100%;
@@ -132,7 +136,7 @@ header {
     p {
       font-family: $nunito-sans;
       text-align: justify;
-      width: 700px;
+      width: 70%;
       margin-left: 70px;
       letter-spacing: 1.5px;
       line-height: 25px;
@@ -192,9 +196,38 @@ header {
 
 // ----------gallery page photo gallery ------//
 .photo-gallery-container {
-  p {
-    text-transform: uppercase;
-    font-family: $zalando;
+  padding: 40px;
+
+  .row {
+    margin-top: 60px;
+
+    p {
+      text-transform: uppercase;
+      font-family: $zalando;
+    }
+    .line {
+      height: 50px;
+      width: 1px;
+      background-color: $accent-color;
+      margin: 5px 0 5px 10px;
+    }
+
+    .slider {
+      margin-bottom: 40px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(7, auto);
+      grid-gap: 20px;
+      padding: 10px;
+      flex: none;
+      overflow-x: hidden;
+
+      img {
+        height: 300px;
+        width: auto;
+        cursor: pointer;
+      }
+    }
   }
 }
 
@@ -226,7 +259,7 @@ footer {
       text-transform: uppercase;
     }
 
-    div {
+    .line {
       height: 50px;
       width: 1px;
       background-color: $accent-color;
@@ -285,6 +318,24 @@ footer {
 
     div {
       margin: 50px 0 20px 0;
+    }
+  }
+
+  footer {
+    display: block;
+
+    .footer-section-1 {
+      background-color: red;
+      text-align: center;
+    }
+
+    .footer-section-2 {
+      text-align: center;
+
+      background-color: pink;
+      .contact {
+        margin: 0;
+      }
     }
   }
 }

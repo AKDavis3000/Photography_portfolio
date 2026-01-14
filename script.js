@@ -21,7 +21,7 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// lightbox code webdevsimplified not working
+// lightbox code webdevsimplified
 const lightbox = document.createElement('div');
 lightbox.setAttribute('id', 'lightbox');
 document.body.appendChild(lightbox);
@@ -43,4 +43,14 @@ lightboxImages.forEach((image) => {
 lightbox.addEventListener('click', (e) => {
   if (e.target !== e.currentTarget) return;
   lightbox.classList.remove('active');
+});
+
+// image slider
+const scrollContainer = document.querySelectorAll('.slider');
+
+scrollContainer.forEach((container) => {
+  container.addEventListener('wheel', (e) => {
+    container.scrollLeft += e.deltaX;
+    document.style.scrollBehavior = 'auto';
+  });
 });

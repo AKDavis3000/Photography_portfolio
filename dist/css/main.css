@@ -18,9 +18,12 @@ body {
 
 header {
   position: relative;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  background-color: black;
 }
 header p {
   font-family: "Zalando Sans Expanded", sans-serif;
@@ -80,6 +83,9 @@ header nav ul li a {
   text-transform: uppercase;
   letter-spacing: 1.5px;
 }
+.intro-container .self-image {
+  margin-top: 40px;
+}
 .intro-container .self-image img {
   height: 100%;
   width: 100%;
@@ -110,7 +116,7 @@ header nav ul li a {
 .about-container .about_description p {
   font-family: "Nunito Sans", sans-serif;
   text-align: justify;
-  width: 700px;
+  width: 70%;
   margin-left: 70px;
   letter-spacing: 1.5px;
   line-height: 25px;
@@ -162,9 +168,36 @@ header nav ul li a {
   padding: 4px;
 }
 
-.photo-gallery-container p {
+.photo-gallery-container {
+  padding: 40px;
+}
+.photo-gallery-container .row {
+  margin-top: 60px;
+}
+.photo-gallery-container .row p {
   text-transform: uppercase;
   font-family: "Zalando Sans Expanded", sans-serif;
+}
+.photo-gallery-container .row .line {
+  height: 50px;
+  width: 1px;
+  background-color: #0f542f;
+  margin: 5px 0 5px 10px;
+}
+.photo-gallery-container .row .slider {
+  margin-bottom: 40px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  grid-gap: 20px;
+  padding: 10px;
+  flex: none;
+  overflow-x: hidden;
+}
+.photo-gallery-container .row .slider img {
+  height: 300px;
+  width: auto;
+  cursor: pointer;
 }
 
 footer {
@@ -192,7 +225,7 @@ footer .footer-section-1 p {
   margin-bottom: 10px;
   text-transform: uppercase;
 }
-footer .footer-section-1 div {
+footer .footer-section-1 .line {
   height: 50px;
   width: 1px;
   background-color: #0f542f;
@@ -237,6 +270,20 @@ footer .footer-section-3 p {
   }
   .intro-container div {
     margin: 50px 0 20px 0;
+  }
+  footer {
+    display: block;
+  }
+  footer .footer-section-1 {
+    background-color: red;
+    text-align: center;
+  }
+  footer .footer-section-2 {
+    text-align: center;
+    background-color: pink;
+  }
+  footer .footer-section-2 .contact {
+    margin: 0;
   }
 }
 @media (max-width: 768px) {
