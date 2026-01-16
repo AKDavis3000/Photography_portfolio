@@ -51,6 +51,6 @@ const scrollContainer = document.querySelectorAll('.slider');
 scrollContainer.forEach((container) => {
   container.addEventListener('wheel', (e) => {
     container.scrollLeft += e.deltaX;
-    document.style.scrollBehavior = 'auto';
+    // document.style.scrollBehavior = 'auto';
   });
 });

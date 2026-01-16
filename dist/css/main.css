@@ -63,8 +63,13 @@ header nav ul li {
 }
 header nav ul li a {
   text-decoration: none;
+  transition: all 0.4s;
+}
+header nav ul li a:hover {
+  text-decoration: underline;
 }
 
+/* ---------- intro --------------*/
 .intro-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -172,7 +177,8 @@ header nav ul li a {
   padding: 40px;
 }
 .photo-gallery-container .row {
-  margin-top: 60px;
+  margin: 60px auto 0 auto;
+  width: 95%;
 }
 .photo-gallery-container .row p {
   text-transform: uppercase;
@@ -182,7 +188,7 @@ header nav ul li a {
   height: 50px;
   width: 1px;
   background-color: #0f542f;
-  margin: 5px 0 5px 10px;
+  margin: 10px 0 10px 10px;
 }
 .photo-gallery-container .row .slider {
   margin-bottom: 40px;
@@ -193,6 +199,8 @@ header nav ul li a {
   padding: 10px;
   flex: none;
   overflow-x: hidden;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
 }
 .photo-gallery-container .row .slider img {
   height: 300px;
@@ -202,8 +210,8 @@ header nav ul li a {
 
 footer {
   display: grid;
-  grid-template-columns: 60% 40%;
-  grid-template-rows: 2;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3fr 1fr;
   background-image: url(/img/white-lens.png), linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
   background-blend-mode: overlay;
   background-repeat: no-repeat;
@@ -232,25 +240,26 @@ footer .footer-section-1 .line {
   margin: 0 0 5px 10px;
 }
 footer .footer-section-2 {
-  padding: 15px;
+  justify-self: end;
   line-height: 25px;
   letter-spacing: 0.8px;
+  margin-top: 150px;
+  margin-right: 40px;
 }
-footer .footer-section-2 .contact {
-  margin-left: 180px;
-}
-footer .footer-section-2 .contact .footer-title {
+footer .footer-section-2 .footer-title {
   text-transform: uppercase;
-  margin-top: 140px;
 }
-footer .footer-section-2 .contact .fa-phone,
-footer .footer-section-2 .contact .fa-envelope {
+footer .footer-section-2 .fa-phone,
+footer .footer-section-2 .fa-envelope {
   margin-right: 10px;
 }
-footer .footer-section-2 .contact ul {
+footer .footer-section-2 ul {
   display: flex;
 }
-footer .footer-section-2 .contact ul i {
+footer .footer-section-2 ul li {
+  margin: 0 5px;
+}
+footer .footer-section-2 ul i {
   margin-right: 5px;
 }
 footer .footer-section-3 {
@@ -270,20 +279,6 @@ footer .footer-section-3 p {
   }
   .intro-container div {
     margin: 50px 0 20px 0;
-  }
-  footer {
-    display: block;
-  }
-  footer .footer-section-1 {
-    background-color: red;
-    text-align: center;
-  }
-  footer .footer-section-2 {
-    text-align: center;
-    background-color: pink;
-  }
-  footer .footer-section-2 .contact {
-    margin: 0;
   }
 }
 @media (max-width: 768px) {
