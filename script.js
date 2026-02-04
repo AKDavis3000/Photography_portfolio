@@ -22,35 +22,51 @@ document.addEventListener('click', (e) => {
 });
 
 // lightbox code webdevsimplified
-const lightbox = document.createElement('div');
-lightbox.setAttribute('id', 'lightbox');
-document.body.appendChild(lightbox);
+const lightboxFunctionality = () => {
+  const lightbox = document.createElement('div');
+  lightbox.setAttribute('id', 'lightbox');
+  document.body.appendChild(lightbox);
 
-const lightboxImages = document.querySelectorAll('.lightbox-img');
+  const lightboxImages = document.querySelectorAll('.lightbox-img');
 
-lightboxImages.forEach((image) => {
-  image.addEventListener('click', (e) => {
-    lightbox.classList.add('active');
-    const img = document.createElement('img');
-    img.src = image.src;
-    while (lightbox.firstChild) {
-      lightbox.removeChild(lightbox.firstChild);
-    }
-    lightbox.appendChild(img);
+  lightboxImages.forEach((image) => {
+    image.addEventListener('click', (e) => {
+      lightbox.classList.add('active');
+      const img = document.createElement('img');
+      img.src = image.src;
+      while (lightbox.firstChild) {
+        lightbox.removeChild(lightbox.firstChild);
+      }
+      lightbox.appendChild(img);
+    });
   });
-});
 
-lightbox.addEventListener('click', (e) => {
-  if (e.target !== e.currentTarget) return;
-  lightbox.classList.remove('active');
-});
+  lightbox.addEventListener('click', (e) => {
+    if (e.target !== e.currentTarget) return;
+    lightbox.classList.remove('active');
+  });
+};
+
+lightboxFunctionality();
 
 // image slider
-const scrollContainer = document.querySelectorAll('.slider');
+const imageScroll = () => {
+  const scrollContainer = document.querySelectorAll('.slider');
 
-scrollContainer.forEach((container) => {
-  container.addEventListener('wheel', (e) => {
-    container.scrollLeft += e.deltaX;
-    // document.style.scrollBehavior = 'auto';
+  scrollContainer.forEach((container) => {
+    container.addEventListener('wheel', (e) => {
+      container.scrollLeft += e.deltaX;
+    });
   });
-});
+};
+imageScroll();
+
+// loader
+const siteLoader = () => {
+  const loaderContainer = document.querySelector('.loader-container');
+
+  window.addEventListener('load', () => {
+    loaderContainer.classList.add('hidden');
+  });
+};
+siteLoader();

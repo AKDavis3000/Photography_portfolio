@@ -17,6 +17,37 @@ body {
   font-family: "Atkinson Hyperlegible Mono", sans-serif;
 }
 
+.loader-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.loader-container #camera-button {
+  -webkit-animation: 2s infinite pressButton;
+          animation: 2s infinite pressButton;
+}
+.loader-container #finger {
+  -webkit-animation: 2s infinite pressFinger;
+          animation: 2s infinite pressFinger;
+}
+.loader-container #top-flash,
+.loader-container #bottom-flash {
+  -webkit-animation: 2s infinite 1s flash;
+          animation: 2s infinite 1s flash;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 header {
   position: fixed;
   display: flex;
@@ -281,6 +312,55 @@ footer .footer-section-3 p {
   text-align: center;
 }
 
+@-webkit-keyframes pressButton {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+}
+
+@keyframes pressButton {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+}
+@-webkit-keyframes pressFinger {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(1px);
+  }
+}
+@keyframes pressFinger {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(1px);
+  }
+}
+@-webkit-keyframes flash {
+  0%, 50%, to {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+@keyframes flash {
+  0%, 50%, to {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
 @media (max-width: 600px) {
   header nav {
     width: 250px;

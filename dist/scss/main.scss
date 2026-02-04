@@ -20,6 +20,38 @@ body {
   font-family: $atkinson;
 }
 
+// ------loader ---------//
+.loader-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+
+  #camera-button {
+    animation: 2s infinite pressButton;
+  }
+
+  #finger {
+    animation: 2s infinite pressFinger;
+  }
+
+  #top-flash,
+  #bottom-flash {
+    animation: 2s infinite 1s flash;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 //-------nav--------//
 
 header {
@@ -323,6 +355,40 @@ footer {
     p {
       text-align: center;
     }
+  }
+}
+
+@keyframes pressButton {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(2px);
+  }
+}
+
+@keyframes pressFinger {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(1px);
+  }
+}
+
+@keyframes flash {
+  0%,
+  50%,
+  to {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
   }
 }
 
