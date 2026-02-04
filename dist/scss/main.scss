@@ -7,11 +7,12 @@
   padding: 0;
   list-style: none;
   color: white;
+  text-decoration: none;
 }
 
 body {
   background-image: url(/img/black-background.jpg),
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
   background-blend-mode: overlay;
   background-size: cover;
   background-repeat: no-repeat;
@@ -22,13 +23,13 @@ body {
 //-------nav--------//
 
 header {
-  position: relative;
   position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   background-color: black;
+  top: 0;
 
   p {
     font-family: $zalando;
@@ -69,12 +70,22 @@ header {
         text-align: center;
 
         a {
-          text-decoration: none;
-          transition: all 0.4s;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 0;
+            left: 0;
+            bottom: 0;
+            background-color: white;
+            transition: 0.3s;
+          }
         }
 
-        a:hover {
-          text-decoration: underline;
+        a:hover::after {
+          width: 100%;
         }
       }
     }
@@ -87,6 +98,7 @@ header {
   grid-template-columns: 1fr 1fr;
   font-family: $zalando;
   align-items: center;
+  margin-top: 25px;
 
   div {
     text-align: center;

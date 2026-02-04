@@ -5,10 +5,11 @@
   padding: 0;
   list-style: none;
   color: white;
+  text-decoration: none;
 }
 
 body {
-  background-image: url(/img/black-background.jpg), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  background-image: url(/img/black-background.jpg), linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
   background-blend-mode: overlay;
   background-size: cover;
   background-repeat: no-repeat;
@@ -17,13 +18,13 @@ body {
 }
 
 header {
-  position: relative;
   position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   background-color: black;
+  top: 0;
 }
 header p {
   font-family: "Zalando Sans Expanded", sans-serif;
@@ -62,11 +63,20 @@ header nav ul li {
   text-align: center;
 }
 header nav ul li a {
-  text-decoration: none;
-  transition: all 0.4s;
+  position: relative;
 }
-header nav ul li a:hover {
-  text-decoration: underline;
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  transition: 0.3s;
+}
+header nav ul li a:hover::after {
+  width: 100%;
 }
 
 /* ---------- intro --------------*/
@@ -75,6 +85,7 @@ header nav ul li a:hover {
   grid-template-columns: 1fr 1fr;
   font-family: "Zalando Sans Expanded", sans-serif;
   align-items: center;
+  margin-top: 25px;
 }
 .intro-container div {
   text-align: center;
