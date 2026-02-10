@@ -17,6 +17,7 @@ body {
   font-family: "Atkinson Hyperlegible Mono", sans-serif;
 }
 
+/* ---------- loader ------------*/
 .loader-container {
   position: fixed;
   height: 100%;
@@ -30,17 +31,14 @@ body {
   z-index: 100;
 }
 .loader-container #camera-button {
-  -webkit-animation: 2s infinite pressButton;
-          animation: 2s infinite pressButton;
+  animation: 2s infinite pressButton;
 }
 .loader-container #finger {
-  -webkit-animation: 2s infinite pressFinger;
-          animation: 2s infinite pressFinger;
+  animation: 2s infinite pressFinger;
 }
 .loader-container #top-flash,
 .loader-container #bottom-flash {
-  -webkit-animation: 2s infinite 1s flash;
-          animation: 2s infinite 1s flash;
+  animation: 2s infinite 1s flash;
 }
 
 .hidden {
@@ -48,6 +46,7 @@ body {
   visibility: hidden;
 }
 
+/* ---------- nav --------------*/
 header {
   position: fixed;
   display: flex;
@@ -136,8 +135,11 @@ header nav ul li a:hover::after {
 .intro-container .self-image img {
   height: 100%;
   width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
+/* ---------- about --------------*/
 .about-container {
   background-color: black;
   display: grid;
@@ -169,6 +171,7 @@ header nav ul li a:hover::after {
   line-height: 25px;
 }
 
+/*--------- home page photo gallery --------*/
 .gallery-container {
   max-width: 1200px;
   width: 90%;
@@ -193,6 +196,7 @@ header nav ul li a:hover::after {
      object-fit: cover;
 }
 
+/* ------- lightbox--------*/
 #lightbox {
   position: fixed;
   z-index: 100;
@@ -215,6 +219,7 @@ header nav ul li a:hover::after {
   padding: 4px;
 }
 
+/* ----------gallery page photo gallery ------*/
 .photo-gallery-container {
   padding: 40px;
 }
@@ -241,8 +246,7 @@ header nav ul li a:hover::after {
   padding: 10px;
   flex: none;
   overflow-x: hidden;
-  -ms-scroll-chaining: none;
-      overscroll-behavior: none;
+  overscroll-behavior: none;
 }
 .photo-gallery-container .row .slider img {
   height: 300px;
@@ -250,6 +254,7 @@ header nav ul li a:hover::after {
   cursor: pointer;
 }
 
+/*---------- footer -----------*/
 footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -286,7 +291,7 @@ footer .footer-section-2 {
   line-height: 25px;
   letter-spacing: 0.8px;
   margin-top: 150px;
-  margin-right: 40px;
+  padding-right: 40px;
 }
 footer .footer-section-2 .footer-title {
   text-transform: uppercase;
@@ -301,10 +306,13 @@ footer .footer-section-2 ul {
 footer .footer-section-2 ul li {
   margin: 0 5px;
 }
-footer .footer-section-2 ul i {
+footer .footer-section-2 ul li i {
   margin-right: 5px;
 }
 footer .footer-section-3 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   grid-column: span 2;
   padding: 15px;
 }
@@ -312,29 +320,13 @@ footer .footer-section-3 p {
   text-align: center;
 }
 
-@-webkit-keyframes pressButton {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(2px);
-  }
-}
-
+/* ---------- keyframes--------------*/
 @keyframes pressButton {
   0%, 100% {
     transform: translateY(0px);
   }
   50% {
     transform: translateY(2px);
-  }
-}
-@-webkit-keyframes pressFinger {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(1px);
   }
 }
 @keyframes pressFinger {
@@ -345,14 +337,6 @@ footer .footer-section-3 p {
     transform: translateY(1px);
   }
 }
-@-webkit-keyframes flash {
-  0%, 50%, to {
-    opacity: 1;
-  }
-  25%, 75% {
-    opacity: 0;
-  }
-}
 @keyframes flash {
   0%, 50%, to {
     opacity: 1;
@@ -361,10 +345,36 @@ footer .footer-section-3 p {
     opacity: 0;
   }
 }
+/*-------- media queries -------*/
+@media (max-width: 500px) {
+  /*------ about ------*/
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+  .about-container .about_description {
+    margin-top: 20px;
+  }
+  /*------ footer ------*/
+  footer .footer-section-1 {
+    padding: 0px;
+    margin: 10px 0 0 10px;
+  }
+  footer .footer-section-2 {
+    padding-right: 10px;
+  }
+  footer .footer-section-2 ul li {
+    margin: 0;
+  }
+  footer .footer-section-3 {
+    padding: 0px;
+  }
+}
 @media (max-width: 600px) {
+  /*--- nav ---*/
   header nav {
     width: 250px;
   }
+  /*--- intro ---*/
   .intro-container {
     grid-template-columns: 1fr;
   }

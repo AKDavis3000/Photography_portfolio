@@ -1,5 +1,4 @@
-@import './components/colors.scss';
-@import './components/fonts.scss';
+@use 'components/' as i;
 
 * {
   box-sizing: border-box;
@@ -11,16 +10,18 @@
 }
 
 body {
-  background-image: url(/img/black-background.jpg),
+  background-image:
+    url(/img/black-background.jpg),
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
   background-blend-mode: overlay;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
-  font-family: $atkinson;
+  font-family: i.$atkinson;
 }
 
-// ------loader ---------//
+/* ---------- loader ------------*/
+
 .loader-container {
   position: fixed;
   height: 100%;
@@ -52,7 +53,7 @@ body {
   visibility: hidden;
 }
 
-//-------nav--------//
+/* ---------- nav --------------*/
 
 header {
   position: fixed;
@@ -64,7 +65,7 @@ header {
   top: 0;
 
   p {
-    font-family: $zalando;
+    font-family: i.$zalando;
     text-transform: uppercase;
     margin: 20px;
     font-size: 1.1rem;
@@ -92,7 +93,7 @@ header {
     width: 270px;
     height: 100vh;
     transition: 0.5s;
-    font-family: $atkinson;
+    font-family: i.$atkinson;
 
     ul {
       list-style-type: none;
@@ -128,7 +129,7 @@ header {
 .intro-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  font-family: $zalando;
+  font-family: i.$zalando;
   align-items: center;
   margin-top: 25px;
 
@@ -148,14 +149,16 @@ header {
 
   .self-image {
     margin-top: 40px;
+
     img {
       height: 100%;
       width: 100%;
+      object-fit: contain;
     }
   }
 }
 
-// ------- about ---------//
+/* ---------- about --------------*/
 .about-container {
   background-color: black;
   display: grid;
@@ -173,7 +176,7 @@ header {
     .about_line {
       height: 60px;
       width: 1px;
-      background-color: $accent-color;
+      background-color: i.$accent-color;
       margin: 0 0 5px 10px;
     }
     p:nth-child(3) {
@@ -184,7 +187,7 @@ header {
 
   .about_description {
     p {
-      font-family: $nunito-sans;
+      font-family: i.$nunito-sans;
       text-align: justify;
       width: 70%;
       margin-left: 70px;
@@ -194,7 +197,7 @@ header {
   }
 }
 
-//--------- home page photo gallery --------//
+/*--------- home page photo gallery --------*/
 .gallery-container {
   max-width: 1200px;
   width: 90%;
@@ -221,7 +224,7 @@ header {
   }
 }
 
-// ------- lightbox--------//
+/* ------- lightbox--------*/
 #lightbox {
   position: fixed;
   z-index: 100;
@@ -244,7 +247,7 @@ header {
   padding: 4px;
 }
 
-// ----------gallery page photo gallery ------//
+/* ----------gallery page photo gallery ------*/
 .photo-gallery-container {
   padding: 40px;
 
@@ -254,12 +257,12 @@ header {
 
     p {
       text-transform: uppercase;
-      font-family: $zalando;
+      font-family: i.$zalando;
     }
     .line {
       height: 50px;
       width: 1px;
-      background-color: $accent-color;
+      background-color: i.$accent-color;
       margin: 10px 0 10px 10px;
     }
 
@@ -283,12 +286,13 @@ header {
   }
 }
 
-//---------- footer -----------//
+/*---------- footer -----------*/
 footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 3fr 1fr;
-  background-image: url(/img/white-lens.png),
+  background-image:
+    url(/img/white-lens.png),
     linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
   background-blend-mode: overlay;
   background-repeat: no-repeat;
@@ -314,7 +318,7 @@ footer {
     .line {
       height: 50px;
       width: 1px;
-      background-color: $accent-color;
+      background-color: i.$accent-color;
       margin: 0 0 5px 10px;
     }
   }
@@ -324,7 +328,7 @@ footer {
     line-height: 25px;
     letter-spacing: 0.8px;
     margin-top: 150px;
-    margin-right: 40px;
+    padding-right: 40px;
 
     .footer-title {
       text-transform: uppercase;
@@ -340,15 +344,18 @@ footer {
 
       li {
         margin: 0 5px;
-      }
 
-      i {
-        margin-right: 5px;
+        i {
+          margin-right: 5px;
+        }
       }
     }
   }
 
   .footer-section-3 {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
     grid-column: span 2;
     padding: 15px;
 
@@ -358,6 +365,7 @@ footer {
   }
 }
 
+/* ---------- keyframes--------------*/
 @keyframes pressButton {
   0%,
   100% {
@@ -392,14 +400,48 @@ footer {
   }
 }
 
-//-------- media queries -------//
+/*-------- media queries -------*/
+@media (max-width: 500px) {
+  /*------ about ------*/
+  .about-container {
+    grid-template-columns: 1fr;
+
+    .about_description {
+      margin-top: 20px;
+    }
+  }
+
+  /*------ footer ------*/
+  footer {
+    .footer-section-1 {
+      padding: 0px;
+      margin: 10px 0 0 10px;
+    }
+
+    .footer-section-2 {
+      padding-right: 10px;
+
+      ul {
+        li {
+          margin: 0;
+        }
+      }
+    }
+
+    .footer-section-3 {
+      padding: 0px;
+    }
+  }
+}
+
 @media (max-width: 600px) {
+  /*--- nav ---*/
   header {
     nav {
       width: 250px;
     }
   }
-
+  /*--- intro ---*/
   .intro-container {
     grid-template-columns: 1fr;
 
