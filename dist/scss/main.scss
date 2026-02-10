@@ -63,6 +63,7 @@ header {
   width: 100%;
   background-color: black;
   top: 0;
+  z-index: 10;
 
   p {
     font-family: i.$zalando;
@@ -271,7 +272,7 @@ header {
       width: 100%;
       display: grid;
       grid-template-columns: repeat(7, auto);
-      grid-gap: 20px;
+      grid-gap: 25px;
       padding: 10px;
       flex: none;
       overflow-x: hidden;
@@ -281,6 +282,12 @@ header {
         height: 300px;
         width: auto;
         cursor: pointer;
+        transform: scale(1);
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
   }

@@ -55,6 +55,7 @@ const imageScroll = () => {
 
   scrollContainer.forEach((container) => {
     container.addEventListener('wheel', (e) => {
+      e.preventDefault();
       container.scrollLeft += e.deltaX;
     });
   });
