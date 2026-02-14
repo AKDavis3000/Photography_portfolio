@@ -49,19 +49,6 @@ const lightboxFunctionality = () => {
 
 lightboxFunctionality();
 
-// image slider
-const imageScroll = () => {
-  const scrollContainer = document.querySelectorAll('.slider');
-
-  scrollContainer.forEach((container) => {
-    container.addEventListener('wheel', (e) => {
-      e.preventDefault();
-      container.scrollLeft += e.deltaX;
-    });
-  });
-};
-imageScroll();
-
 // loader
 const siteLoader = () => {
   const loaderContainer = document.querySelector('.loader-container');
